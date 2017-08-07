@@ -1,0 +1,10 @@
+version: '2'
+services:
+  dev:
+    build: .
+    ports:
+      - "22:220"
+    image: ubuntu_dev
+    tty: true
+    stdin_open: true
+    command: 'bash'
