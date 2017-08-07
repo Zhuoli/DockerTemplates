@@ -9,5 +9,5 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends \
 
 RUN apt-get install -y g++ gdb gdbserver
 
-CMD service ssh start > out.log
+ENTRYPOINT service ssh restart && bash
 
