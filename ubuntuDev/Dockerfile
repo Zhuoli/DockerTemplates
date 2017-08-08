@@ -9,5 +9,8 @@ RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends \
 
 RUN apt-get install -y g++ gdb gdbserver
 
+RUN adduser --disabled-password --gecos '' ubuntu \
+	&& echo ubuntu:password | chpasswd
+
 ENTRYPOINT service ssh restart && bash
 
